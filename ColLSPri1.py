@@ -36,7 +36,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Load the image once and store it globally
-image_path = "ColLSToday.jpg"
+image_path = "ColLSPri.jpg"
 image = Image.open(image_path)
 
 #def rerun_thread():
