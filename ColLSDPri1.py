@@ -90,7 +90,7 @@ def main():
     )
 
     # Local path to the image
-    image_path = "ColLSPri1.jpg"
+    image_path = "ColLSPri.jpg"
 
     # Load the image using the cached function
     image = load_image(image_path)
