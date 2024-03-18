@@ -56,7 +56,6 @@ def rerun():
 def load_image(image_path):
     return Image.open(image_path)
 
-
 def main():
     # Add buttons for running the external programs in the sidebar
     if st.sidebar.button('ReFresh Data'):
@@ -90,7 +89,7 @@ def main():
     )
 
     # Local path to the image
-    image_path = "ColLSPri.jpg"
+    image_path = "ColLSToday1.jpg"
 
     # Load the image using the cached function
     image = load_image(image_path)
