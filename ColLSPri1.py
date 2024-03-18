@@ -54,13 +54,14 @@ def rerun_thread(image_container):
 
 def main():
     # Display the image to automatically resize with the column width
-    image_container = st.empty()
-    image_container.image(image, use_column_width=True)
+    st.image(image_path, use_column_width=True)
 
-    # Start a thread to rerun the update function after 60 seconds
-    threading.Thread(target=rerun_thread, args=(image_container,), daemon=True).start()
+    # Keep updating the image every 60 seconds
+    while True:
+        time.sleep(60)
+        # Force Streamlit to rerun the loop by modifying a widget
+        st.write(f"Updating at: {time.strftime('%H:%M:%S')}")
 
 if __name__ == '__main__':
     main()
-
 
