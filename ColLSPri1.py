@@ -1,7 +1,6 @@
 from PIL import Image
 import streamlit as st
-import os
-import time
+import threading
 
 # Set Page Configuration
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
@@ -14,15 +13,18 @@ hide_st_style = """
             header {visibility: hidden;}
             </style>
             """
-st.markdown(hide_st_style, unsafe_allow_html=True)
+st.markdown(hide_st_style, unsafe_allow_html=True)  
 
-st.markdown("""
+st.markdown(
+    """
     <style>
     .reportview-container .viewer .stApp .footer {
         visibility: hidden;
     }
     </style>
-    """, unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True,
+)
 
 st.markdown("""
     <style>
@@ -32,23 +34,27 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# Initialize or load the session state for tracking last update time
-if 'last_update' not in st.session_state:
-    st.session_state.last_update = time.time()
-
 # Load the image once and store it globally
-image_path = "ColLSToday1.jpg"
+image_path = "ColLSPri.jpg"
 image = Image.open(image_path)
+
+def your_function_to_update():
+    # Refresh the image
+    image = Image.open(image_path)
+    st.image(image, use_column_width=True)
+
+def rerun_thread():
+    # Sleep for 60 seconds
+    time.sleep(60)
+    # Rerun the streamlit app
+    threading.Thread(target=your_function_to_update).start()
 
 def main():
     # Display the image to automatically resize with the column width
     st.image(image, use_column_width=True)
-    
-    # Check if 60 seconds have passed
-    current_time = time.time()
-    if current_time - st.session_state.last_update > 60:
-        st.session_state.last_update = current_time
-        st.experimental_rerun()
+
+    # Start a thread to rerun the app after 60 seconds
+    threading.Thread(target=rerun_thread, daemon=True).start()
 
 if __name__ == '__main__':
     main()
