@@ -40,15 +40,17 @@ image_path = "ColLSPri.jpg"
 image = Image.open(image_path)
 
 def your_function_to_update():
+    global image  # Declare image as global
     # Refresh the image
     image = Image.open(image_path)
     st.image(image, use_column_width=True)
 
 def rerun_thread():
-    # Sleep for 60 seconds
-    time.sleep(60)
-    # Rerun the streamlit app
-    threading.Thread(target=your_function_to_update).start()
+    while True:  # Run indefinitely
+        # Sleep for 60 seconds
+        time.sleep(60)
+        # Rerun the streamlit app
+        your_function_to_update()
 
 def main():
     # Display the image to automatically resize with the column width
@@ -56,8 +58,6 @@ def main():
 
     # Start a thread to rerun the app after 60 seconds
     threading.Thread(target=rerun_thread, daemon=True).start()
-
-    
 
 if __name__ == '__main__':
     main()
