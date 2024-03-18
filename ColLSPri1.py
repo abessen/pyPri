@@ -57,5 +57,7 @@ def main():
     # Start a thread to rerun the app after 60 seconds
     threading.Thread(target=rerun_thread, daemon=True).start()
 
+    
+
 if __name__ == '__main__':
     main()
