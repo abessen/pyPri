@@ -34,7 +34,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Load the image once and store it globally
-@st.experimental_singleton
+@st.cache_resource
 def load_image(image_path):
     return Image.open(image_path)
 
