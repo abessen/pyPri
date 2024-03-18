@@ -1,10 +1,6 @@
 from PIL import Image
 import streamlit as st
-import subprocess
 import threading
-import os
-import time
-import sys  # Add this line for importing sys
 
 # Set Page Configuration
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
@@ -42,14 +38,23 @@ st.markdown("""
 image_path = "ColLSPri.jpg"
 image = Image.open(image_path)
 
+def your_function_to_update():
+    # Refresh the image
+    image = Image.open(image_path)
+    st.image(image, use_column_width=True)
 
+def rerun_thread():
+    # Sleep for 60 seconds
+    time.sleep(60)
+    # Rerun the streamlit app
+    threading.Thread(target=your_function_to_update).start()
 
 def main():
     # Display the image to automatically resize with the column width
     st.image(image, use_column_width=True)
 
     # Start a thread to rerun the app after 60 seconds
-   # threading.Thread(target=rerun_thread, daemon=True).start()
+    threading.Thread(target=rerun_thread, daemon=True).start()
 
 if __name__ == '__main__':
     main()
