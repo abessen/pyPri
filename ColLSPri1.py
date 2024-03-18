@@ -1,6 +1,5 @@
 from PIL import Image
 import streamlit as st
-import threading
 import time
 
 # Set Page Configuration
@@ -39,26 +38,17 @@ st.markdown("""
 image_path = "ColLSPri.jpg"
 image = Image.open(image_path)
 
-# Function to update the displayed image
-def update_image(image_container):
-    new_image = Image.open(image_path)
-    image_container.image(new_image, use_column_width=True)
-
-def update_loop(image_container):
-    while True:
-        # Update the image every 60 seconds
-        time.sleep(60)
-        # Call the update_image function to refresh the image
-        update_image(image_container)
-
 def main():
     # Display the image initially
     image_container = st.empty()
-    update_image(image_container)
+    image_container.image(image, use_column_width=True)
 
-    # Start a separate thread to handle the update loop
-    update_thread = threading.Thread(target=update_loop, args=(image_container,))
-    update_thread.start()
+    # Keep updating the image every 60 seconds
+    while True:
+        time.sleep(60)
+        # Update the image in-place
+        updated_image = Image.open(image_path)
+        image_container.image(updated_image, use_column_width=True)
 
 if __name__ == '__main__':
     main()
