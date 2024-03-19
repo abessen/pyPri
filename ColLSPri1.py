@@ -40,7 +40,7 @@ st.markdown("""
 image_path = "ColLSPri.jpg"
 image = Image.open(image_path)
 
-def main():
+#def main():
     # Display the image initially
   #  image_container = st.empty()
   #  image_container.image(image, use_column_width=True)
@@ -50,10 +50,10 @@ def main():
      #   time.sleep(60)
         
         # Update the image in-place
-        updated_image = Image.open(image_path)
+      #  updated_image = Image.open(image_path)
       #  image_container.image(updated_image, use_column_width=True)
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+#    main()
 
 
