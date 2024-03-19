@@ -27,6 +27,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+
 st.markdown("""
     <style>
     body {
@@ -54,3 +55,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
