@@ -46,7 +46,7 @@ def main():
   #  image_container.image(image, use_column_width=True)
 
     # Keep updating the image every 60 seconds
-    while True:
+   # while True:
      #   time.sleep(60)
         
         # Update the image in-place
