@@ -42,8 +42,8 @@ image = Image.open(image_path)
 
 def main():
     # Display the image initially
-    image_container = st.empty()
-    image_container.image(image, use_column_width=True)
+  #  image_container = st.empty()
+  #  image_container.image(image, use_column_width=True)
 
     # Keep updating the image every 60 seconds
     while True:
