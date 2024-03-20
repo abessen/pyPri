@@ -99,7 +99,7 @@ def main():
     st.image(image, use_column_width=True)
 
     # Wait for 60 seconds before the next iteration
-    time.sleep(60)  
+    time.sleep(30)  
     rerun()
 
 
