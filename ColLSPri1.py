@@ -61,7 +61,7 @@ def main():
     # Add buttons for running the external programs in the sidebar
     if st.sidebar.button('ReFresh Data'):
         try:
-            subprocess.call(["/path/to/pushOlenPrimary.sh"])  # Update with the correct path
+            subprocess.call(["C:/pyPri/pushOlenPrimary.sh"])  # Update with the correct path
         except Exception as e:
             print("Error executing pushOlenPrimary.sh:", e)
 
