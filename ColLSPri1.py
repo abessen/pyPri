@@ -65,11 +65,7 @@ def main():
         except Exception as e:
             print("Error executing pushOlenPrimary.sh:", e)
 
-    if st.sidebar.button('Set Schedule'):
-        try:
-            subprocess.Popen(["streamlit", "run", "/path/to/SetSchedule.py"])  # Update with the correct path
-        except Exception as e:
-            print("Error executing SetSchedule.py:", e)
+
 
     # Inject custom CSS for sidebar background color
     st.markdown(
@@ -85,7 +81,7 @@ def main():
     )
 
     # Local path to the image
-    image_path = "ColLSToday1.jpg"
+    image_path = "C:/pyPri/ColLSToday1.jpg"
 
     # Load the image using the cached function
     image = load_image(image_path)
