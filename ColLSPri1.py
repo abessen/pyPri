@@ -56,7 +56,7 @@ def main():
     try:
         subprocess.call(["C:/pyPri/pushOlenPrimary.bat"])  # Update with the correct path
     except Exception as e:
-        print("Error executing pushOlenPrimary.sh:", e)
+        print("Error executing pushOlenPrimary.bat:", e)
 
     # Inject custom CSS for sidebar background color
     st.markdown(
