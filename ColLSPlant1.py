@@ -52,13 +52,11 @@ def load_image(image_path):
 
 
 def main():
-    # Add buttons for running the external programs in the sidebar
-    if st.sidebar.button('ReFresh Data'):
-        try:
-            subprocess.call([r"C:\pyRun1\pushOlenPrimary.bat"])
-        except Exception as e:
-            print("Error executing pushOlenPrimary.bat:", e)
-
+    # Run the shell script to refresh data
+    try:
+        subprocess.call(["C:/pyPri/pushOlenPrimary.bat"])  # Update with the correct path
+    except Exception as e:
+        print("Error executing pushOlenPrimary.bat:", e)
  
     # Inject custom CSS for sidebar background color
     st.markdown(
