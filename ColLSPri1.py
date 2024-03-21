@@ -81,7 +81,7 @@ def main():
     )
 
     # Local path to the image
-    image_path = "C:/pyPri/ColLSToday1.jpg"
+    image_path = "ColLSToday1.jpg"
 
     # Load the image using the cached function
     image = load_image(image_path)
