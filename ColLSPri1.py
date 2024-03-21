@@ -2,7 +2,6 @@ from PIL import Image
 import streamlit as st
 import subprocess
 import time
-import os
 
 # Set Page Configuration
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
@@ -46,11 +45,6 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# Function to rerun the Streamlit app/script using Streamlit's experimental rerun feature
-def rerun():
-    st.rerun()
-    
-
 # Cache the function that loads the image
 #@st.cache_data
 def load_image(image_path):
@@ -58,14 +52,11 @@ def load_image(image_path):
 
 
 def main():
-    # Add buttons for running the external programs in the sidebar
-    if st.sidebar.button('ReFresh Data'):
-        try:
-            subprocess.call(["C:/pyPri/pushOlenPrimary.sh"])  # Update with the correct path
-        except Exception as e:
-            print("Error executing pushOlenPrimary.sh:", e)
-
-
+    # Run the shell script to refresh data
+    try:
+        subprocess.call(["C:/pyPri/pushOlenPrimary.sh"])  # Update with the correct path
+    except Exception as e:
+        print("Error executing pushOlenPrimary.sh:", e)
 
     # Inject custom CSS for sidebar background color
     st.markdown(
@@ -89,12 +80,15 @@ def main():
     # Display the image to automatically resize with the column width
     st.image(image, use_column_width=True)
 
-    # Wait for 60 seconds before the next iteration
+    # Wait for 30 seconds before the next iteration
     time.sleep(30)  
-    rerun()
+
+    # Rerun the Streamlit app
+    st.experimental_rerun()
 
 
 if __name__ == '__main__':
     main()
 
 
+    
