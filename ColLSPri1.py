@@ -82,7 +82,7 @@ def main():
 
     
     # Rerun the Streamlit app after 30 seconds
-    st.experimental_rerun(interval=30)
+    st.experimental_rerun(30)
 
     # Wait for 30 seconds before the next iteration
     #time.sleep(30)  
