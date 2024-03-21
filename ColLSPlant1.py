@@ -59,17 +59,7 @@ def main():
         except Exception as e:
             print("Error executing pushOlenPrimary.bat:", e)
 
-    if st.sidebar.button('Set Schedule'):
-        try:
-            process = subprocess.Popen(["streamlit", "run", r"C:\pyRun1\SetSchedule.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            stdout, stderr = process.communicate()
-            if stdout:
-                print("SetSchedule.py stdout:", stdout.decode())
-            if stderr:
-                print("SetSchedule.py stderr:", stderr.decode())
-        except Exception as e:
-            print("Error executing SetSchedule.py:", e)
-
+ 
     # Inject custom CSS for sidebar background color
     st.markdown(
         """
