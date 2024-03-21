@@ -82,10 +82,7 @@ def main():
 
     # Wait for 60 seconds before the next iteration
     time.sleep(30)  
-    rerun()
-
-
-
+    st.rerunn()
 
 
 if __name__ == '__main__':
