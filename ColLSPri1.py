@@ -3,6 +3,7 @@ import streamlit as st
 import subprocess
 import time
 import os
+import win32com.client
 
 # Set Page Configuration
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
@@ -76,6 +77,18 @@ def main():
         except Exception as e:
             print("Error executing SetSchedule.py:", e)
 
+    # Add code to run the batch files silently
+    wsh = win32com.client.Dispatch("WScript.Shell")
+    path1 = "C:\\pyDash1\\pushOlenPrimary.bat"  # Update this to the path of your first batch file
+    os.chdir("C:\\pyDash1")
+    cmd1 = "cmd /c " + '"' + path1 + '"'  # Run the first batch file invisibly
+    wsh.Run(cmd1, 0, True)
+
+    path2 = "C:\\pyPri\\pushOlenPrimary.bat"  # Update this to the path of your second batch file
+    os.chdir("C:\\pyPri")
+    cmd2 = "cmd /c " + '"' + path2 + '"'  # Run the second batch file invisibly
+    wsh.Run(cmd2, 0, True)
+
     # Inject custom CSS for sidebar background color
     st.markdown(
         """
@@ -101,9 +114,6 @@ def main():
     # Wait for 60 seconds before the next iteration
     time.sleep(30)  
     rerun()
-
-
-
 
 
 if __name__ == '__main__':
