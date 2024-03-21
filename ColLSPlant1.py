@@ -2,7 +2,6 @@ from PIL import Image
 import streamlit as st
 import subprocess
 import time
-import os
 
 # Set Page Configuration
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
