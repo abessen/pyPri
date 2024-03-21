@@ -45,9 +45,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# Function to rerun the Streamlit app/script using Streamlit's experimental rerun feature
-def rerun():
-    st.rerun()
+
     
 
 # Cache the function that loads the image
