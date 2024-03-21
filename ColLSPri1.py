@@ -84,11 +84,11 @@ def main():
     time.sleep(30)  
 
     # Rerun the Streamlit app
-    st.experimental_rerun()
+    st.rerun()
 
 
 if __name__ == '__main__':
     main()
 
 
-    
+
