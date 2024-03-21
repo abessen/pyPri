@@ -44,10 +44,7 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
-
-
-    
-
+  
 # Cache the function that loads the image
 #@st.cache_data
 def load_image(image_path):
