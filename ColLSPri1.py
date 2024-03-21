@@ -49,7 +49,7 @@ st.markdown("""
 
 # Function to rerun the Streamlit app/script using Streamlit's experimental rerun feature
 def rerun():
-    st.experimental_rerun()
+    st.rerun()
     
 
 # Cache the function that loads the image
@@ -113,7 +113,7 @@ def main():
 
     # Wait for 60 seconds before the next iteration
     time.sleep(30)  
-    rerun()
+    st.rerun()
 
 
 if __name__ == '__main__':
