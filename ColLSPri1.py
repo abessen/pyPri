@@ -3,7 +3,6 @@ import streamlit as st
 import subprocess
 import time
 import os
-import win32com.client
 
 # Set Page Configuration
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
@@ -62,32 +61,15 @@ def main():
     # Add buttons for running the external programs in the sidebar
     if st.sidebar.button('ReFresh Data'):
         try:
-            subprocess.call([r"C:\pyRun1\pushOlenPrimary.bat"])
+            subprocess.call(["/path/to/pushOlenPrimary.sh"])
         except Exception as e:
-            print("Error executing pushOlenPrimary.bat:", e)
+            print("Error executing pushOlenPrimary.sh:", e)
 
     if st.sidebar.button('Set Schedule'):
         try:
-            process = subprocess.Popen(["streamlit", "run", r"C:\pyRun1\SetSchedule.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            stdout, stderr = process.communicate()
-            if stdout:
-                print("SetSchedule.py stdout:", stdout.decode())
-            if stderr:
-                print("SetSchedule.py stderr:", stderr.decode())
+            subprocess.Popen(["streamlit", "run", "/path/to/SetSchedule.py"])
         except Exception as e:
             print("Error executing SetSchedule.py:", e)
-
-    # Add code to run the batch files silently
-    wsh = win32com.client.Dispatch("WScript.Shell")
-    path1 = "C:\\pyDash1\\pushOlenPrimary.bat"  # Update this to the path of your first batch file
-    os.chdir("C:\\pyDash1")
-    cmd1 = "cmd /c " + '"' + path1 + '"'  # Run the first batch file invisibly
-    wsh.Run(cmd1, 0, True)
-
-    path2 = "C:\\pyPri\\pushOlenPrimary.bat"  # Update this to the path of your second batch file
-    os.chdir("C:\\pyPri")
-    cmd2 = "cmd /c " + '"' + path2 + '"'  # Run the second batch file invisibly
-    wsh.Run(cmd2, 0, True)
 
     # Inject custom CSS for sidebar background color
     st.markdown(
@@ -118,3 +100,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+    
