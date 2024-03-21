@@ -54,7 +54,7 @@ def load_image(image_path):
 def main():
     # Run the shell script to refresh data
     try:
-        subprocess.call(["C:/pyPri/pushOlenPrimary.sh"])  # Update with the correct path
+        subprocess.call(["C:/pyPri/pushOlenPrimary.bat"])  # Update with the correct path
     except Exception as e:
         print("Error executing pushOlenPrimary.sh:", e)
 
