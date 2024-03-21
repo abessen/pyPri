@@ -71,6 +71,22 @@ def main():
         except Exception as e:
             print("Error executing SetSchedule.py:", e)
 
+    # Add code to run the batch files silently
+    wsh = subprocess.Popen("WScript.Shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    path1 = "C:\\pyDash1\\pushOlenPrimary.bat"  # Update this to the path of your first batch file
+    os.chdir("C:\\pyDash1")
+    cmd1 = "cmd /c " + '"' + path1 + '"'  # Run the first batch file invisibly
+    wsh.stdin.write(cmd1.encode())
+    wsh.stdin.close()
+    wsh.wait()
+
+    path2 = "C:\\pyPri\\pushOlenPrimary.bat"  # Update this to the path of your second batch file
+    os.chdir("C:\\pyPri")
+    cmd2 = "cmd /c " + '"' + path2 + '"'  # Run the second batch file invisibly
+    wsh.stdin.write(cmd2.encode())
+    wsh.stdin.close()
+    wsh.wait()
+
     # Inject custom CSS for sidebar background color
     st.markdown(
         """
@@ -102,4 +118,4 @@ if __name__ == '__main__':
     main()
 
 
-    
+
