@@ -80,11 +80,15 @@ def main():
     # Display the image to automatically resize with the column width
     st.image(image, use_column_width=True)
 
+    
+    # Rerun the Streamlit app after 30 seconds
+    st.experimental_rerun(interval=30)
+
     # Wait for 30 seconds before the next iteration
-    time.sleep(30)  
+    #time.sleep(30)  
 
     # Rerun the Streamlit app
-    st.rerun()
+   # st.rerun()
 
 
 if __name__ == '__main__':
