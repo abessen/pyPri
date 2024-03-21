@@ -82,13 +82,13 @@ def main():
 
     
     # Rerun the Streamlit app after 30 seconds
-    st.reru(30)
+    #st.rerun(30)
 
     # Wait for 30 seconds before the next iteration
-    #time.sleep(30)  
+    time.sleep(30)  
 
     # Rerun the Streamlit app
-   # st.rerun()
+    st.rerun()
 
 
 if __name__ == '__main__':
