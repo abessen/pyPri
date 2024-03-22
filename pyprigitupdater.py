@@ -1,5 +1,4 @@
 import subprocess
-import schedule
 import time
 
 def run_batch_file_silently(batch_file_path):
@@ -12,15 +11,13 @@ def main():
     # Path to the second batch file
     batch_file_path2 = r"C:\pyPri\pushOlenPrimary.bat"
     
-    # Schedule running the first batch file every 60 seconds
-    schedule.every(60).seconds.do(run_batch_file_silently, batch_file_path1)
-    # Schedule running the second batch file every 60 seconds
-    schedule.every(60).seconds.do(run_batch_file_silently, batch_file_path2)
-    
-    # Run scheduled tasks indefinitely
+    # Schedule running the first batch file every 30 seconds
     while True:
-        schedule.run_pending()
-        time.sleep(1)
+        run_batch_file_silently(batch_file_path1)
+        time.sleep(30)
+        
+        run_batch_file_silently(batch_file_path2)
+        time.sleep(30)
 
 if __name__ == "__main__":
     main()
