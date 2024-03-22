@@ -51,36 +51,40 @@ def load_image(image_path):
     return Image.open(image_path)
 
 def main():
-    # Run the shell script to refresh data
-    try:
-        subprocess.call(["C:/pyPri/pushOlenPrimary.bat"])  # Update with the correct path
-    except Exception as e:
-        print("Error executing pushOlenPrimary.bat:", e)
+    while True:
+        # Run the shell script to refresh data
+        try:
+            subprocess.call(["C:/pyPri/pushOlenPrimary.bat"])  # Update with the correct path
+        except Exception as e:
+            print("Error executing pushOlenPrimary.bat:", e)
 
-    # Inject custom CSS for sidebar background color
-    st.markdown(
-        """
-        <style>
-        .sidebar .sidebar-content {
-            background-color: #000080; /* Dark blue sidebar background */
-            color: white; /* Text color */
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+        # Inject custom CSS for sidebar background color
+        st.markdown(
+            """
+            <style>
+            .sidebar .sidebar-content {
+                background-color: #000080; /* Dark blue sidebar background */
+                color: white; /* Text color */
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
 
-    # Local path to the image
-    image_path = "ColLSToday1.jpg"
+        # Local path to the image
+        image_path = "ColLSToday1.jpg"
 
-    # Load the image using the cached function
-    image = load_image(image_path)
+        # Load the image using the cached function
+        image = load_image(image_path)
 
-    # Display the image to automatically resize with the column width
-    st.image(image, use_column_width=True)
+        # Display the image to automatically resize with the column width
+        st.image(image, use_column_width=True)
 
-    # Rerun the Streamlit app after 30 seconds
-    st.experimental_set_query_params(**{"time": time.time()})
+        # Wait for 30 seconds before the next iteration
+        time.sleep(30)  
+
+        # Rerun the Streamlit app
+        st.experimental_rerun()
 
 if __name__ == '__main__':
     main()
