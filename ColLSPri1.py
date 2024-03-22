@@ -51,6 +51,9 @@ def load_image(image_path):
     return Image.open(image_path)
 
 def main():
+    if 'last_run' not in st.session_state:
+        st.session_state.last_run = time.time()
+
     while True:
         # Run the shell script to refresh data
         try:
