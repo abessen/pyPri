@@ -17,7 +17,7 @@ def main():
       #  time.sleep(60)
         
         run_batch_file_silently(batch_file_path2)
-        time.sleep(60)
+        time.sleep(30)
 
 if __name__ == "__main__":
     main()
