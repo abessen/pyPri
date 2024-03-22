@@ -14,10 +14,10 @@ def main():
     # Schedule running the first batch file every 30 seconds
     while True:
         run_batch_file_silently(batch_file_path1)
-        time.sleep(30)
+        time.sleep(60)
         
         run_batch_file_silently(batch_file_path2)
-        time.sleep(40)
+        time.sleep(60)
 
 if __name__ == "__main__":
     main()
