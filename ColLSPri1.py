@@ -1,7 +1,10 @@
-from PIL import Image
+import tkinter as tk
+from PIL import ImageTk, Image
 import streamlit as st
 import subprocess
 import time
+import cv2
+import numpy as np
 
 # Set Page Configuration
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
@@ -45,10 +48,29 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# Cache the function that loads the image
-#@st.cache_data
-def load_image(image_path):
-    return Image.open(image_path)
+# Function to capture image using tkinter
+def capture_image():
+    # Create a tkinter window
+    root = tk.Tk()
+    root.attributes('-topmost', True)
+    root.withdraw()  # Hide the main window
+
+    # Initialize the camera
+    cap = cv2.VideoCapture(0)
+
+    # Capture the image
+    ret, frame = cap.read()
+
+    # Release the camera
+    cap.release()
+
+    # Close the tkinter window
+    root.destroy()
+
+    # Convert the image from OpenCV format to PIL format
+    image = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+
+    return image
 
 def main():
     if 'last_run' not in st.session_state:
@@ -74,13 +96,10 @@ def main():
             unsafe_allow_html=True
         )
 
-        # Local path to the image
-        image_path = "ColLSToday1.jpg"
+        # Capture the image
+        image = capture_image()
 
-        # Load the image using the cached function
-        image = load_image(image_path)
-
-        # Display the image to automatically resize with the column width
+        # Display the captured image
         st.image(image, use_column_width=True)
 
         # Wait for 30 seconds before the next iteration
