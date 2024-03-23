@@ -21,7 +21,7 @@ def main():
         run_batch_file_silently("C:\pyDash1\pushOlenPrimary.bat")
       #  time.sleep(60)
         
-        run_batch_file_silently(batch_file_path2)
+        run_batch_file_silently("C:\pyPri\pushOlenPrimary.bat")
         time.sleep(30)
 
 if __name__ == "__main__":
