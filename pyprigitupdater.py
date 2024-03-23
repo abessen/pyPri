@@ -2,8 +2,13 @@ import subprocess
 import time
 
 def run_batch_file_silently(batch_file_path):
+    # Create startup info object
+    startupinfo = subprocess.STARTUPINFO()
+    # Hide the window
+    startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+    
     # Run the batch file invisibly
-    subprocess.call(["cmd", "/c", batch_file_path], shell=True, creationflags=subprocess.CREATE_NO_WINDOW)
+    subprocess.call(["cmd", "/c", batch_file_path], shell=True, creationflags=subprocess.CREATE_NO_WINDOW, startupinfo=startupinfo)
 
 def main():
     # Path to the first batch file
