@@ -56,18 +56,23 @@ start_combo3.place(x=230, y=14)  # Adjust the coordinates for indentation
 
 # Create labels to display the selections
 label1 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
-label1.place(x=134, y=40)
+label1.place(x=start_combo1.winfo_x() + 4, y=start_combo1.winfo_y() + start_combo1.winfo_height() + 5)
 
 label2 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
-label2.place(x=319, y=40)
+label2.place(x=start_combo2.winfo_x() + 4, y=start_combo2.winfo_y() + start_combo2.winfo_height() + 5)
 
 label3 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
-label3.place(x=230, y=40)
+label3.place(x=start_combo3.winfo_x() + 4, y=start_combo3.winfo_y() + start_combo3.winfo_height() + 5)
 
 def update_label(event):
     label1.config(text=start_combo1.get())
+    label1.place(x=start_combo1.winfo_x() + 4, y=start_combo1.winfo_y() + start_combo1.winfo_height() + 5)
+
     label2.config(text=start_combo2.get())
+    label2.place(x=start_combo2.winfo_x() + 4, y=start_combo2.winfo_y() + start_combo2.winfo_height() + 5)
+
     label3.config(text=start_combo3.get())
+    label3.place(x=start_combo3.winfo_x() + 4, y=start_combo3.winfo_y() + start_combo3.winfo_height() + 5)
 
 # Bind the update_label function to all comboboxes
 start_combo1.bind("<<ComboboxSelected>>", update_label)
