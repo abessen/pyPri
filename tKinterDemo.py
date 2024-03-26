@@ -12,7 +12,7 @@ root.configure(background='black')
 # Define the default value
 default_value = tk.StringVar(value="12:01 AM")
 
-# Define custom style for the dropdown
+# Define custom style for the dropdown1
 style = ttk.Style()
 style.theme_use('clam')  # Use the 'clam' theme for the style
 style.configure('TCombobox1', fieldbackground='gray')  # Set background color to light green
