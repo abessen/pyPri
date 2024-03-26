@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import ImageTk, Image
-import csv
+from openpyxl import Workbook
 
 def update_label1(event):
     value = start_combo1.get()
