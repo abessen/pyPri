@@ -9,6 +9,9 @@ root.title("Display Image")
 # Set background color to black
 root.configure(background='black')
 
+# Define the default value
+default_value = tk.StringVar(value="12:01 AM")
+
 # Define custom style for the dropdown
 style = ttk.Style()
 style.theme_use('clam')  # Use the 'clam' theme for the style
