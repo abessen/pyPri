@@ -33,17 +33,5 @@ start_combo = ttk.Combobox(root, values=HrSel, width=20)  # Adjust width as need
 start_combo.place(x=100, y=10)  # Adjust the x-coordinate for indentation
 start_combo.lift()  # Lift the dropdown box above the image
 
-# Load the image
-image_path = r"C:\pyPri\ColLSToday2.jpg"
-image = Image.open(image_path)
-image.thumbnail((1294, 1047))  # Resize the image as needed
-
-# Convert Image object to Tkinter PhotoImage object
-tk_image = ImageTk.PhotoImage(image)
-
-# Create a label widget to display the image
-label = tk.Label(root, image=tk_image)
-label.place(x=0, y=0, relwidth=1, relheight=1)  # Fill the entire window with the image
-
 # Run the Tkinter event loop
 root.mainloop()
