@@ -39,7 +39,7 @@ RateSel = ("200", "250", "300", "350", "400", "450", "500", "550", "600", "650",
            "2250", "2300", "2400")
 
 # Load the image
-image_path = r"C:\pyPri\ColLSToday2.jpg"
+image_path = r"C:\pyPri\ColLSToday1.jpg"
 image = Image.open(image_path)
 
 # Adjust window size based on image dimensions
