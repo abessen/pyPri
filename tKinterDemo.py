@@ -21,6 +21,7 @@ HrSel = ("12:01 AM", "12:30 AM", "1:00 AM", "1:30 AM", "2:00 AM", "2:30 AM", "3:
          "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM", "9:30 PM", "10:00 PM", "10:30 PM", "11:00 PM",
          "11:30 PM")
 
+
 # Load the image
 image_path = r"C:\pyPri\ColLSToday2.jpg"
 image = Image.open(image_path)
