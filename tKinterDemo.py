@@ -1,16 +1,15 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import ImageTk, Image
-import csv
 
 def update_label1(event):
     label1.config(text=start_combo1.get())
-    save_to_csv(start_combo1.get())
 
-def save_to_csv(value):
-    with open("start.csv", mode="w", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow([value])
+def update_label2(event):
+    label2.config(text=start_combo2.get())
+
+def update_label3(event):
+    label3.config(text=start_combo3.get())
 
 # Create the Tkinter window
 root = tk.Tk()
@@ -57,9 +56,25 @@ start_combo1 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvet
 start_combo1.place(x=134, y=14)  # Adjust the coordinates for indentation
 start_combo1.bind("<<ComboboxSelected>>", update_label1)
 
+# Create the second Dropdownbox (placed 100px to the right of the first one)
+start_combo2 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
+start_combo2.place(x=319, y=14)  # Adjust the coordinates for indentation
+start_combo2.bind("<<ComboboxSelected>>", update_label2)
+
+# Create the third Dropdownbox (placed 100px to the right of the second one)
+start_combo3 = ttk.Combobox(root, values=RateSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
+start_combo3.place(x=230, y=14)  # Adjust the coordinates for indentation
+start_combo3.bind("<<ComboboxSelected>>", update_label3)
+
 # Create labels to display the selections
 label1 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
 label1.place(x=start_combo1.winfo_x() + 5, y=start_combo1.winfo_y() + start_combo1.winfo_height() + 1)
+
+label2 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
+label2.place(x=start_combo2.winfo_x() + 5, y=start_combo2.winfo_y() + start_combo2.winfo_height() + 3)
+
+label3 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
+label3.place(x=start_combo3.winfo_x() + 5, y=start_combo3.winfo_y() + start_combo3.winfo_height() + 3)
 
 # Run the Tkinter event loop
 root.mainloop()
