@@ -6,7 +6,7 @@ from PIL import ImageTk, Image
 root = tk.Tk()
 root.title("Display Image")
 
-HrSel="12:01 AM","12:30 AM","1:00 AM","1:30 AM"
+HrSel="12:01 AM","12:30 AM","1:00 AM","1:30 AM",
 2:00 AM
 2:30 AM
 3:00 AM
