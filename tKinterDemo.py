@@ -4,15 +4,12 @@ from PIL import ImageTk, Image
 
 def update_label1(event):
     label1.config(text=start_combo1.get())
-    label1.place(x=start_combo1.winfo_x() + 5, y=start_combo1.winfo_y() + start_combo1.winfo_height() + 3)
 
 def update_label2(event):
     label2.config(text=start_combo2.get())
-    label2.place(x=start_combo2.winfo_x() + 5, y=start_combo2.winfo_y() + start_combo2.winfo_height() + 3)
 
 def update_label3(event):
     label3.config(text=start_combo3.get())
-    label3.place(x=start_combo3.winfo_x() + 5, y=start_combo3.winfo_y() + start_combo3.winfo_height() + 3)
 
 # Create the Tkinter window
 root = tk.Tk()
@@ -73,11 +70,4 @@ start_combo3.bind("<<ComboboxSelected>>", update_label3)
 label1 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
 label1.place(x=start_combo1.winfo_x() + 5, y=start_combo1.winfo_y() + start_combo1.winfo_height() + 1)
 
-label2 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
-label2.place(x=start_combo2.winfo_x() + 5, y=start_combo2.winfo_y() + start_combo2.winfo_height() + 3)
-
-label3 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
-label3.place(x=start_combo3.winfo_x() + 5, y=start_combo3.winfo_y() + start_combo3.winfo_height() + 3)
-
-# Run the Tkinter event loop
-root.mainloop()
+label2 = tk.Label(root
