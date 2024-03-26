@@ -52,7 +52,7 @@ start_combo2.place(x=319, y=14)  # Adjust the coordinates for indentation
 
 # Create the third Dropdownbox (placed 100px to the right of the second one)
 start_combo3 = ttk.Combobox(root, values=RateSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
-start_combo3.place(x=204, y=14)  # Adjust the coordinates for indentation
+start_combo3.place(x=254, y=14)  # Adjust the coordinates for indentation
 
 # Run the Tkinter event loop
 root.mainloop()
