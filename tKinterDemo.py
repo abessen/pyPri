@@ -39,7 +39,7 @@ label.place(x=0, y=0)  # Place the image at the top-left corner of the window
 
 # Create the first Dropdownbox
 start_combo1 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
-start_combo1.place(x=138, y=10)  # Adjust the coordinates for indentation
+start_combo1.place(x=136, y=10)  # Adjust the coordinates for indentation
 
 # Create the second Dropdownbox (placed 100px to the right of the first one)
 start_combo2 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
