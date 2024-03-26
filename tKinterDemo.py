@@ -62,4 +62,19 @@ start_combo2.place(x=319, y=14)  # Adjust the coordinates for indentation
 start_combo2.bind("<<ComboboxSelected>>", update_label2)
 
 # Create the third Dropdownbox (placed 100px to the right of the second one)
-start_combo3 = ttk.Combobox(root, values=RateSel, width=9, height=1, font=('Helvetica', 11), style
+start_combo3 = ttk.Combobox(root, values=RateSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
+start_combo3.place(x=230, y=14)  # Adjust the coordinates for indentation
+start_combo3.bind("<<ComboboxSelected>>", update_label3)
+
+# Create labels to display the selections
+label1 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
+label1.place(x=134, y=40)
+
+label2 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
+label2.place(x=319, y=40)
+
+label3 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
+label3.place(x=230, y=40)
+
+# Run the Tkinter event loop
+root.mainloop()
