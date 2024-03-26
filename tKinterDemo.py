@@ -4,13 +4,15 @@ from PIL import ImageTk, Image
 import csv
 
 def update_label1(event):
-    label1.config(text=start_combo1.get())
-    save_to_csv(start_combo1.get())
+    value = start_combo1.get()
+    label1.config(text=value)
+    save_to_excel(value)
 
-def save_to_csv(value):
-    with open("start.csv", mode="w", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow([value])
+def save_to_excel(value):
+    wb = Workbook()
+    ws = wb.active
+    ws.append([value])
+    wb.save("start.xlsx")
 
 # Create the Tkinter window
 root = tk.Tk()
