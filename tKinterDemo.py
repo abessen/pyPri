@@ -20,7 +20,7 @@ style.configure('TCombobox1', fieldbackground='gray')  # Set background color to
 # Define custom style for the dropdown2
 style = ttk.Style()
 style.theme_use('clam')  # Use the 'clam' theme for the style
-style.configure('TCombobox1', fieldbackground='gray')  # Set background color to light green
+style.configure('TCombobox2', fieldbackground='gray')  # Set background color to light green
 
 
 HrSel = ("12:01 AM", "12:30 AM", "1:00 AM", "1:30 AM", "2:00 AM", "2:30 AM", "3:00 AM", "3:30 AM", "4:00 AM",
