@@ -42,29 +42,17 @@ tk_image = ImageTk.PhotoImage(image)
 label = tk.Label(root, image=tk_image)
 label.place(x=0, y=0)  # Place the image at the top-left corner of the window
 
-def update_label1(event):
-    label1.config(text=start_combo1.get())
-
-def update_label2(event):
-    label2.config(text=start_combo2.get())
-
-def update_label3(event):
-    label3.config(text=start_combo3.get())
-
 # Create the first Dropdownbox
 start_combo1 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
 start_combo1.place(x=134, y=14)  # Adjust the coordinates for indentation
-start_combo1.bind("<<ComboboxSelected>>", update_label1)
 
 # Create the second Dropdownbox (placed 100px to the right of the first one)
 start_combo2 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
 start_combo2.place(x=319, y=14)  # Adjust the coordinates for indentation
-start_combo2.bind("<<ComboboxSelected>>", update_label2)
 
 # Create the third Dropdownbox (placed 100px to the right of the second one)
 start_combo3 = ttk.Combobox(root, values=RateSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
 start_combo3.place(x=230, y=14)  # Adjust the coordinates for indentation
-start_combo3.bind("<<ComboboxSelected>>", update_label3)
 
 # Create labels to display the selections
 label1 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
@@ -75,6 +63,16 @@ label2.place(x=319, y=40)
 
 label3 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
 label3.place(x=230, y=40)
+
+def update_label(event):
+    label1.config(text=start_combo1.get())
+    label2.config(text=start_combo2.get())
+    label3.config(text=start_combo3.get())
+
+# Bind the update_label function to all comboboxes
+start_combo1.bind("<<ComboboxSelected>>", update_label)
+start_combo2.bind("<<ComboboxSelected>>", update_label)
+start_combo3.bind("<<ComboboxSelected>>", update_label)
 
 # Run the Tkinter event loop
 root.mainloop()
