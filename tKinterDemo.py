@@ -43,16 +43,16 @@ label = tk.Label(root, image=tk_image)
 label.place(x=0, y=0)  # Place the image at the top-left corner of the window
 
 # Create the first Dropdownbox
-start_combo1 = ttk.Combobox(root, values=HrSel, width=12, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
+start_combo1 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
 start_combo1.place(x=134, y=14)  # Adjust the coordinates for indentation
 
 # Create the second Dropdownbox (placed 100px to the right of the first one)
-start_combo2 = ttk.Combobox(root, values=HrSel, width=12, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
+start_combo2 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
 start_combo2.place(x=319, y=14)  # Adjust the coordinates for indentation
 
 # Create the third Dropdownbox (placed 100px to the right of the second one)
-start_combo3 = ttk.Combobox(root, values=RateSel, width=12, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
-start_combo3.place(x=504, y=14)  # Adjust the coordinates for indentation
+start_combo3 = ttk.Combobox(root, values=RateSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
+start_combo3.place(x=230, y=14)  # Adjust the coordinates for indentation
 
 # Run the Tkinter event loop
 root.mainloop()
