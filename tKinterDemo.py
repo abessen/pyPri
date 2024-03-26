@@ -33,7 +33,7 @@ label = tk.Label(root, image=tk_image)
 label.place(x=0, y=0)  # Place the image at the top-left corner of the window
 
 # Create Dropdownbox
-start_combo = ttk.Combobox(root, values=HrSel, width=10, height=3, font=('Helvetica', 12))  # Adjust font size as needed
+start_combo = ttk.Combobox(root, values=HrSel, width=10, height=2, font=('Helvetica', 12))  # Adjust font size as needed
 start_combo.place(x=140, y=12)  # Adjust the coordinates for indentation
 
 # Run the Tkinter event loop
