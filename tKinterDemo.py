@@ -6,6 +6,18 @@ from PIL import ImageTk, Image
 root = tk.Tk()
 root.title("Display Image")
 
+
+
+
+
+
+
+
+
+
+
+
+
 # Load the image
 image_path = r"C:\pyPri\ColLSToday2.jpg"
 image = Image.open(image_path)
