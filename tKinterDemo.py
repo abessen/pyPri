@@ -71,7 +71,7 @@ start_combo3.bind("<<ComboboxSelected>>", update_label3)
 
 # Create labels to display the selections
 label1 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
-label1.place(x=start_combo1.winfo_x() + 1, y=start_combo1.winfo_y() + start_combo1.winfo_height() + 3)
+label1.place(x=start_combo1.winfo_x() - 1, y=start_combo1.winfo_y() + start_combo1.winfo_height() + 3)
 
 label2 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
 label2.place(x=start_combo2.winfo_x() + 5, y=start_combo2.winfo_y() + start_combo2.winfo_height() + 3)
