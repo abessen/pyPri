@@ -2,15 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import ImageTk, Image
 
-def update_label1(event):
-    label1.config(text=start_combo1.get())
-
-def update_label2(event):
-    label2.config(text=start_combo2.get())
-
-def update_label3(event):
-    label3.config(text=start_combo3.get())
-
 # Create the Tkinter window
 root = tk.Tk()
 root.title("Display Image")
@@ -50,6 +41,15 @@ tk_image = ImageTk.PhotoImage(image)
 # Create a label widget to display the image
 label = tk.Label(root, image=tk_image)
 label.place(x=0, y=0)  # Place the image at the top-left corner of the window
+
+def update_label1(event):
+    label1.config(text=start_combo1.get())
+
+def update_label2(event):
+    label2.config(text=start_combo2.get())
+
+def update_label3(event):
+    label3.config(text=start_combo3.get())
 
 # Create the first Dropdownbox
 start_combo1 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
