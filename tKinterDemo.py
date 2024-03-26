@@ -56,7 +56,7 @@ start_combo1.place(x=100, y=10)  # Adjust the coordinates for indentation
 
 # Create Dropdownbox2
 start_combo2 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), textvariable=default_value2, style='Custom.TCombobox2')  
-start_combo2.place(x=100, y=40)  # Adjust the coordinates for indentation
+start_combo2.place(x=300, y=40)  # Adjust the coordinates for indentation
 
 # Run the Tkinter event loop
 root.mainloop()
