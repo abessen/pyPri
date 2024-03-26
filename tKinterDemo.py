@@ -19,19 +19,22 @@ HrSel = ("12:01 AM", "12:30 AM", "1:00 AM", "1:30 AM", "2:00 AM", "2:30 AM", "3:
 # Load the image
 image_path = r"C:\pyPri\ColLSToday2.jpg"
 image = Image.open(image_path)
-image.thumbnail((1294, 1047))  # Resize the image as needed
+
+# Adjust window size based on image dimensions
+window_width = min(root.winfo_screenwidth(), image.width)
+window_height = min(root.winfo_screenheight(), image.height)
+root.geometry(f"{window_width}x{window_height}")
 
 # Convert Image object to Tkinter PhotoImage object
 tk_image = ImageTk.PhotoImage(image)
 
 # Create a label widget to display the image
 label = tk.Label(root, image=tk_image)
-label.place(x=0, y=0, relwidth=1, relheight=1)  # Fill the entire window with the image
+label.place(x=0, y=0)  # Place the image at the top-left corner of the window
 
 # Create Dropdownbox
 start_combo = ttk.Combobox(root, values=HrSel)
 start_combo.place(x=100, y=10)  # Adjust the coordinates for indentation
-start_combo.lift()  # Lift the dropdown box above the image
 
 # Run the Tkinter event loop
 root.mainloop()
