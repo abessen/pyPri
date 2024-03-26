@@ -19,12 +19,13 @@ default_value2 = tk.StringVar(value="12:01 AM")
 style1 = ttk.Style()
 style1.theme_use('clam')  # Use the 'clam' theme for the style
 style1.configure('Custom.TCombobox1', fieldbackground='gray')  # Set background color to gray
+style1.map('Custom.TCombobox1', background=[('active', 'gray')])  # Set background color when active
 
 # Define custom style for the second dropdown
 style2 = ttk.Style()
 style2.theme_use('clam')  # Use the 'clam' theme for the style
 style2.configure('Custom.TCombobox2', fieldbackground='gray')  # Set background color to gray
-
+style2.map('Custom.TCombobox2', background=[('active', 'gray')])  # Set background color when active
 
 HrSel = ("12:01 AM", "12:30 AM", "1:00 AM", "1:30 AM", "2:00 AM", "2:30 AM", "3:00 AM", "3:30 AM", "4:00 AM",
          "4:30 AM", "5:00 AM", "5:30 AM", "6:00 AM", "6:30 AM", "7:00 AM", "7:30 AM", "8:00 AM", "8:30 AM", "9:00 AM",
