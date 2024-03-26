@@ -18,12 +18,12 @@ default_value2 = tk.StringVar(value="12:01 AM")
 # Define custom style for the first dropdown
 style1 = ttk.Style()
 style1.theme_use('clam')  # Use the 'clam' theme for the style
-style1.configure('TCombobox1', fieldbackground='gray')  # Set background color to gray
+style1.configure('Custom.TCombobox1', fieldbackground='gray')  # Set background color to gray
 
 # Define custom style for the second dropdown
 style2 = ttk.Style()
 style2.theme_use('clam')  # Use the 'clam' theme for the style
-style2.configure('TCombobox2', fieldbackground='gray')  # Set background color to gray
+style2.configure('Custom.TCombobox2', fieldbackground='gray')  # Set background color to gray
 
 
 HrSel = ("12:01 AM", "12:30 AM", "1:00 AM", "1:30 AM", "2:00 AM", "2:30 AM", "3:00 AM", "3:30 AM", "4:00 AM",
@@ -50,11 +50,11 @@ label = tk.Label(root, image=tk_image)
 label.place(x=0, y=0)  # Place the image at the top-left corner of the window
 
 # Create Dropdownbox1
-start_combo1 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), textvariable=default_value1, style='TCombobox1')  
+start_combo1 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), textvariable=default_value1, style='Custom.TCombobox1')  
 start_combo1.place(x=100, y=10)  # Adjust the coordinates for indentation
 
 # Create Dropdownbox2
-start_combo2 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), textvariable=default_value2, style='TCombobox2')  
+start_combo2 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), textvariable=default_value2, style='Custom.TCombobox2')  
 start_combo2.place(x=100, y=40)  # Adjust the coordinates for indentation
 
 # Run the Tkinter event loop
