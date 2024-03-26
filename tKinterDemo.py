@@ -2,17 +2,17 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import ImageTk, Image
 
-def update_label1(event):
-    label1.config(text=start_combo1.get())
-    label1.place(x=start_combo1.winfo_x() + 5, y=start_combo1.winfo_y() + start_combo1.winfo_height() + 3)
+def update_combo1(event):
+    selected_value = start_combo1.get()
+    start_combo1.set(selected_value)
 
-def update_label2(event):
-    label2.config(text=start_combo2.get())
-    label2.place(x=start_combo2.winfo_x() + 5, y=start_combo2.winfo_y() + start_combo2.winfo_height() + 3)
+def update_combo2(event):
+    selected_value = start_combo2.get()
+    start_combo2.set(selected_value)
 
-def update_label3(event):
-    label3.config(text=start_combo3.get())
-    label3.place(x=start_combo3.winfo_x() + 5, y=start_combo3.winfo_y() + start_combo3.winfo_height() + 3)
+def update_combo3(event):
+    selected_value = start_combo3.get()
+    start_combo3.set(selected_value)
 
 # Create the Tkinter window
 root = tk.Tk()
@@ -57,17 +57,17 @@ label.place(x=0, y=0)  # Place the image at the top-left corner of the window
 # Create the first Dropdownbox
 start_combo1 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
 start_combo1.place(x=134, y=14)  # Adjust the coordinates for indentation
-start_combo1.bind("<<ComboboxSelected>>", update_label1)
+start_combo1.bind("<<ComboboxSelected>>", update_combo1)
 
 # Create the second Dropdownbox (placed 100px to the right of the first one)
 start_combo2 = ttk.Combobox(root, values=HrSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
 start_combo2.place(x=319, y=14)  # Adjust the coordinates for indentation
-start_combo2.bind("<<ComboboxSelected>>", update_label2)
+start_combo2.bind("<<ComboboxSelected>>", update_combo2)
 
 # Create the third Dropdownbox (placed 100px to the right of the second one)
 start_combo3 = ttk.Combobox(root, values=RateSel, width=9, height=1, font=('Helvetica', 11), style='Custom.TCombobox')  # Adjust font size as needed
 start_combo3.place(x=230, y=14)  # Adjust the coordinates for indentation
-start_combo3.bind("<<ComboboxSelected>>", update_label3)
+start_combo3.bind("<<ComboboxSelected>>", update_combo3)
 
 # Create labels to display the selections
 label1 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
