@@ -29,7 +29,7 @@ label = tk.Label(root, image=tk_image)
 label.place(x=0, y=0, relwidth=1, relheight=1)  # Fill the entire window with the image
 
 # Create Dropdownbox
-start_combo = ttk.Combobox(root, values=HrSel)
+start_combo = ttk.Combobox(root, values=HrSel, width=20)  # Adjust width as needed
 start_combo.place(x=100, y=10)  # Adjust the x-coordinate for indentation
 start_combo.lift()  # Lift the dropdown box above the image
 
