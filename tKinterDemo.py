@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import ImageTk, Image
-from openpyxl import load_workbook
+from openpyxl import Workbook
 
 def update_label1(event):
     value = start_combo1.get()
@@ -9,10 +9,10 @@ def update_label1(event):
     save_to_excel(value)
 
 def save_to_excel(value):
-    wb = load_workbook("C:/Users/arb/OneDrive - quarryvision.com/ColLSToday.xlsb")
-    ws = wb["Dash1"]
-    ws["C4"] = value
-    wb.save("C:/Users/arb/OneDrive - quarryvision.com/ColLSToday.xlsb")
+    wb = Workbook()
+    ws = wb.active
+    ws.append([value])
+    wb.save("start.xlsx")
 
 # Create the Tkinter window
 root = tk.Tk()
