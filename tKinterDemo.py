@@ -10,7 +10,7 @@ def update_label1(event):
 
 def save_to_excel(value):
     wb = Workbook()
-    ws = wb.active
+    ws = wb.active    
     ws.append([value])
     wb.save("start.xlsx")
 
