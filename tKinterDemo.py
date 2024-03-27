@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import ImageTk, Image
 from openpyxl import Workbook
+import os
 
 def update_label1(event):
     value = start_combo1.get()
@@ -13,6 +14,26 @@ def save_to_excel(value):
     ws = wb.active    
     ws.append([value])
     wb.save("start.xlsx")
+
+def update_image():
+    # Load the image
+    image_path = r"C:\pyPri\ColLSToday2.jpg"
+    image = Image.open(image_path)
+
+    # Adjust window size based on image dimensions
+    window_width = min(root.winfo_screenwidth(), image.width)
+    window_height = min(root.winfo_screenheight(), image.height)
+    root.geometry(f"{window_width}x{window_height}")
+
+    # Convert Image object to Tkinter PhotoImage object
+    tk_image = ImageTk.PhotoImage(image)
+
+    # Update label with the new image
+    label.configure(image=tk_image)
+    label.image = tk_image  # Keep a reference to avoid garbage collection
+
+    # Schedule the update to happen again in 1 minute
+    root.after(60000, update_image)
 
 # Create the Tkinter window
 root = tk.Tk()
@@ -38,20 +59,8 @@ RateSel = ("200", "250", "300", "350", "400", "450", "500", "550", "600", "650",
            "1600", "1650", "1700", "1750", "1800", "1850", "1900", "1950", "2000", "2050", "2100", "2150", "2200",
            "2250", "2300", "2400")
 
-# Load the image
-image_path = r"C:\pyPri\ColLSToday2.jpg"
-image = Image.open(image_path)
-
-# Adjust window size based on image dimensions
-window_width = min(root.winfo_screenwidth(), image.width)
-window_height = min(root.winfo_screenheight(), image.height)
-root.geometry(f"{window_width}x{window_height}")
-
-# Convert Image object to Tkinter PhotoImage object
-tk_image = ImageTk.PhotoImage(image)
-
 # Create a label widget to display the image
-label = tk.Label(root, image=tk_image)
+label = tk.Label(root)
 label.place(x=0, y=0)  # Place the image at the top-left corner of the window
 
 # Create the first Dropdownbox
@@ -62,6 +71,9 @@ start_combo1.bind("<<ComboboxSelected>>", update_label1)
 # Create labels to display the selections
 label1 = tk.Label(root, text="", font=('Helvetica', 11), bg="black", fg="white")
 label1.place(x=start_combo1.winfo_x() + 5, y=start_combo1.winfo_y() + start_combo1.winfo_height() + 1)
+
+# Schedule the first update of the image
+update_image()
 
 # Run the Tkinter event loop
 root.mainloop()
