@@ -17,7 +17,7 @@ def save_to_excel(value):
 
 def update_image():
     # Load the image
-    image_path = r"C:\pyPri\ColLSToday2.jpg"
+    image_path = r"C:\pyPri\ColLSToday1.jpg"
     image = Image.open(image_path)
 
     # Adjust window size based on image dimensions
