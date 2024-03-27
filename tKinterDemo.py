@@ -12,7 +12,7 @@ def save_to_excel(value):
     wb = Workbook()
     ws = wb.active
     ws.append([value])
-    wb.save("C:\Users\arb\OneDrive - quarryvision.com\ColLSToday.xlsb"start.xlsx")
+    wb.save("start.xlsx")
 
 # Create the Tkinter window
 root = tk.Tk()
