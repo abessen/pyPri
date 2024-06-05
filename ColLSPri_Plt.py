@@ -75,7 +75,7 @@ def main():
         )
 
         # Local path to the image
-        image_path = "ColLSToday1.jpg"
+        image_path = "ColLSToday4.jpg"
 
         # Load the image using the cached function
         image = load_image(image_path)
